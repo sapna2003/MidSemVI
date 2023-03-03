@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            width:460px;
+            margin:30px auto;
+            padding:16px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.26);
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Show Article</h1>
+    <section>
+        <p><em>Article ID : <%= article._id %> </em></p>
+        <h3>Heading : <%= article.heading %> </h3>
+        <h4>Date : <%= article.date %> </h4>
+        <p>Description : <%= article.desc %> </p>
+        <a href="/articles/<%= article._id %>/edit">Edit</a>
+        <form action="/articles/<%=article._id%>?_method=DELETE" method="post">
+            <button>Delete</button>
+        </form>
+    </section>
+</body>
+</html>
